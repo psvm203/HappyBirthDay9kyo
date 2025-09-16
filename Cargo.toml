@@ -4,4 +4,8 @@ version = "0.9.17"
 edition = "2024"
 
 [dependencies]
+chrono = { version = "0.4.42", features = ["serde"] }
+gloo-timers = "0.3.0"
 sycamore = "0.9.1"
+tokio = { version = "1.47.1", features = ["rt", "time"] }
+wasm-bindgen-futures = "0.4.51"
