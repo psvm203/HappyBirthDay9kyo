@@ -165,17 +165,106 @@ fn Why() -> View {
     }
 }
 
-fn Amd() -> View {
+fn Squirrel() -> View {
     view! {
         div(class="flex justify-center items-center mt-100") {
-            img(src="assets/amd.jpg") {}
+            video(src="assets/squirrel.mp4", controls=true) {}
         }
-        div(class="text-5xl flex justify-center items-center mt-5 mb-50") {
-            "이문빈은 쌀먹한 돈과 훈련병 첫 월급을 AMD 주식에 꼴아박았습니다."
+        div(class="text-3xl flex justify-center items-center mt-5 mb-50") {
+            "2024년 5월, 대구 동성로에서 놀았던 걸 기억하시나요?"
+        }
+        div(class="flex justify-center items-center mt-50") {
+            img(src="assets/sister.jpg", width="35%") {}
+        }
+        div(class="text-3xl flex justify-center items-center mt-5 mb-50") {
+            "저녁을 제가 결제했는데, 누나가 밥값을 주셨어요!"
+        }
+        div(class="flex justify-center items-center mt-100") {
+            img(src="assets/remember.jpg", width="35%") {}
+        }
+        div(class="text-3xl flex justify-center items-center mt-5 mb-50") {
+            "카톡에 저녁 정산을 안 올리고, 눈치챈 사람한테 인센티브를 제공하려했지만..."
+        }
+        div(class="flex justify-center items-center mt-100") {
+            img(src="assets/rice.jpg", width="35%") {}
+        }
+        div(class="text-2xl flex justify-center items-center mt-5 mb-50") {
+            "교황쿠가 다른 정산이랑 착각해서 그냥 정산을 받고 다른 방법으로 돌려드리려했어요..."
+        }
+        div(class="flex justify-center items-center mt-100") {
+            img(src="assets/nvidia.png", width="35%") {}
+        }
+        div(class="text-2xl flex justify-center items-center mt-5 mb-20") {
+            "당시 109달러였던 신비디아는 지금은 170달러를 넘었습니다!"
+        }
+        div(class="text-sm flex justify-center items-center mt-5") {
+            "물론 중간에 팖, 만약 안 팔았다면 선물이 포켓몬이 아니라 스위치2가 됐을수도"
         }
     }
 }
 
+#[component]
+fn Hover() -> View {
+    view! {
+        div(class="flex justify-center items-center mt-50") {
+            div(class="card card-sm bg-base-200 max-w-60 shadow") {
+                figure(class="hover-gallery") {
+                    img(src="assets/sand.jpg") {}
+                    img(src="assets/stand.jpg") {}
+                    img(src="assets/chop.jpg") {}
+                    img(src="assets/meat.jpg") {}
+                    img(src="assets/study.jpg") {}
+                }
+                div(class="card-body") {
+                    h2(class="card-title flex justify-between") {
+                        "교황상의 레어한 모습들.zip"
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+#[component]
+fn Collapse() -> View {
+    view! {
+        div(class="flex justify-center items-center mt-50") {
+            div(tabindex="0", class="w-1/4 collapse bg-base-100 border-base-300 border") {
+                div(class="collapse-title font-semibold") { "어쨌든 생일 축하해요! (클릭해보세요)" }
+                div(class="collapse-content text-sm") {
+                    div(class="flex justify-center items-center") {
+                        img(src="assets/begom.jpg") {}
+                    }
+                    div(class="text-5xl flex justify-center items-center mt-5") {
+                        "그럼요~"
+                    }
+                }
+            }
+        }
+    }
+}
+
+#[component]
+fn Love() -> View {
+    view! {
+        div(class="flex justify-center items-center mt-50") {
+            div(class="text-5xl flex justify-center items-center mt-5") {
+                "제 생일선물은 마음에 드셨나요? 마음에 드셨다면 별점을 눌러주세요~~"
+                div(class="rating mt-5 gap-2") {
+                    input(r#type="radio", name="rating-3", class="mask mask-heart bg-red-400", aria-label="1 star", checked=true) {}
+                    input(r#type="radio", name="rating-3", class="mask mask-heart bg-red-400", aria-label="2 star") {}
+                    input(r#type="radio", name="rating-3", class="mask mask-heart bg-red-400", aria-label="3 star") {}
+                    input(r#type="radio", name="rating-3", class="mask mask-heart bg-red-400", aria-label="4 star") {}
+                    input(r#type="radio", name="rating-3", class="mask mask-heart bg-red-400", aria-label="5 star") {}
+                }
+            }
+
+        }
+    }
+}
+
+#[component]
 fn Lol() -> View {
     view! {
         div(class="flex justify-center items-center mt-100") {
@@ -198,7 +287,10 @@ fn App() -> View {
         Timer()
         Me2()
         Why()
-        Amd()
+        Squirrel()
+        Hover()
+        Collapse()
+        Love()
         Lol()
     }
 }
